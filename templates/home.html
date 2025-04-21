@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Sieve | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h1><span class="emoji">💀</span> CYBER SIEVE <span class="emoji">💀</span></h1>
+        <hr>
+        <ul>
+            <li><a href="{{ url_for('index') }}"><span class="emoji">🏠</span> Home</a></li>
+            <li><a href="{{ url_for('chaff') }}"><span class="emoji">🛠️</span> Chaff</a></li>
+            <li><a href="{{ url_for('winnow') }}"><span class="emoji">🔎</span> Winnow</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="home-card">
+            <h2><span class="emoji">💾</span> Welcome to <span style="color: #00ffff;">Cyber Sieve</span></h2>
+            <p>Secure your communication using the magic of <strong>Chaffing & Winnowing</strong> — without encryption!</p>
+
+            <div class="action-links">
+                <a class="action-link" href="{{ url_for('chaff') }}">🛠️ Chaff a Document</a>
+                <a class="action-link" href="{{ url_for('winnow') }}">🔎 Winnow a Document</a>
+            </div>
+
+            <ul class="info-list">
+                <li><span class="emoji">💡</span> Share hidden secrets securely without revealing anything!</li>
+                <li><span class="emoji">🔐</span> RSA encryption + digital signature ensures authenticity.</li>
+                <li><span class="emoji">🧠</span> Designed for stealth, privacy, and cyber-class brilliance!</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

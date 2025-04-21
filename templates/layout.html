@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chaffing & Winnowing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ffae;
+            font-family: 'Share Tech Mono', monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #00ffae;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #00ffae;
+        }
+        .nav-links a {
+            margin-left: 2rem;
+            color: #00ffae;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+        .container {
+            padding: 3rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        .flash {
+            background-color: #1f1f1f;
+            color: #00ffaa;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #00ffaa;
+        }
+        input, textarea, button {
+            display: block;
+            width: 100%;
+            background-color: #1f1f1f;
+            color: #00ffae;
+            border: 1px solid #00ffae;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        button:hover {
+            background-color: #00ffae;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>💻 HackSecure</h1>
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('chaff') }}">Chaff</a>
+            <a href="{{ url_for('winnow') }}">Winnow</a>
+        </div>
+    </div>
+
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="flash">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

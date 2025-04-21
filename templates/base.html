@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Sieve</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Cyber Sieve</h2>
+        <a href="{{ url_for('chaff') }}">Chaff</a>
+        <a href="{{ url_for('do_winnow') }}">Winnow</a>
+    </div>
+    <div class="main-panel">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

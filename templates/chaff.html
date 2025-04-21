@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Chaffing</h2>
+<form action="{{ url_for('handle_chaff') }}" method="POST" enctype="multipart/form-data">
+    <label>Enter Secret Message:</label>
+    <input type="text" name="secret_message" required>
+    <label>Upload File:</label>
+    <input type="file" name="file" required>
+    <label>Upload Receiver's Public Key (.pem):</label>
+    <input type="file" name="public_key" required>
+    <button type="submit">Chaff</button>
+</form>
+{% endblock %}

@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #0d0d0d;
+    color: #39ff14;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #000000, #121212);
+    color: #39ff14;
+    position: fixed;
+    padding: 20px;
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #b84eff;
+}
+
+.sidebar a {
+    display: block;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #00f0ff;
+    transition: all 0.2s;
+}
+
+.sidebar a:hover {
+    color: #39ff14;
+    text-shadow: 0 0 5px #00f0ff;
+}
+
+.main-panel {
+    margin-left: 220px;
+    padding: 40px;
+    background-color: #121212;
+    min-height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, button {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #1f1f1f;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #00f0ff;
+    color: #0d0d0d;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #39ff14;
+    color: black;
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-left: 4px solid #00f0ff;
+}

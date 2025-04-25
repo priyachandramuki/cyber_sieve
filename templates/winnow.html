@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
-{% block content %}
-<h2>Winnowing</h2>
-<form action="{{ url_for('handle_winnow') }}" method="POST" enctype="multipart/form-data">
-    <label>Upload Chaffed File:</label>
-    <input type="file" name="file" required>
-    <label>Upload Keyinfo File:</label>
-    <input type="file" name="keyinfo" required>
-    <label>Upload Your Private Key (.pem):</label>
-    <input type="file" name="private_key" required>
-    <button type="submit">Winnow</button>
-</form>
 
-{% if decrypted %}
-<div class="result-box">
-    <h3>Recovered Secret Message:</h3>
-    <p>{{ decrypted }}</p>
+{% block content %}
+<div class="card">
+    <h2>🔓 Winnow (Extract Secret)</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Upload Chaffed File (.zip):</label>
+        <input type="file" name="chaffed_file">
+
+        <label>Upload Keyinfo (.json):</label>
+        <input type="file" name="keyinfo" required>
+
+        <label>Your Private Key (.pem):</label>
+        <input type="file" name="private_key" required>
+
+        <input type="submit" value="Winnow & Decrypt">
+    </form>
+</div>
+
+{% if result %}
+<div class="card">
+    <h2>🧩 Recovered Message:</h2>
+    <p>{{ result }}</p>
 </div>
 {% endif %}
 {% endblock %}

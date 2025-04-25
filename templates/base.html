@@ -1,3 +1,4 @@
+<!-- templates/base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +7,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Cyber Sieve</h2>
-        <a href="{{ url_for('chaff') }}">Chaff</a>
-        <a href="{{ url_for('do_winnow') }}">Winnow</a>
-    </div>
-    <div class="main-panel">
+  <div class="sidebar">
+    <h1>Cyber Sieve</h1>
+    <a href="{{ url_for('home') }}">🏠 Dashboard</a> <!-- ✅ Add this line -->
+    <a href="{{ url_for('chaff') }}">🛡️ Chaff</a>
+    <a href="{{ url_for('winnow') }}">🔓 Winnow</a>
+    <a href="{{ url_for('generate_keys') }}">🔑 Generate Keys</a>
+    <a class="revoke" href="#" onclick="revokeAlert()">⛔ Revoke Keys</a>
+    <a href="{{ url_for('logout') }}">📋 Logout</a>
+</div>
+
+    <div class="content">
         {% block content %}{% endblock %}
     </div>
+    <script>
+      function revokeAlert() {
+          alert("⚠️ Your keys are only stored on your device.\nTo revoke access, please delete the key files manually.");
+      }
+      </script>      
 </body>
 </html>

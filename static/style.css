@@ -1,80 +1,118 @@
+/* style.css */
 body {
-    margin: 0;
-    font-family: 'Courier New', monospace;
-    background-color: #0d0d0d;
-    color: #39ff14;
+  margin: 0;
+  font-family: 'Fira Code', 'Source Code Pro', monospace;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .sidebar {
-    width: 200px;
-    height: 100vh;
-    background: linear-gradient(to bottom, #000000, #121212);
-    color: #39ff14;
-    position: fixed;
-    padding: 20px;
-    box-shadow: 0 0 10px #00f0ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100%;
+  background-color: #161b22;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.sidebar h2 {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: #b84eff;
+.sidebar h1 {
+  font-size: 26px;
+  color: #00FF00;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .sidebar a {
-    display: block;
-    margin: 20px 0;
-    text-decoration: none;
-    color: #00f0ff;
-    transition: all 0.2s;
+  text-decoration: none;
+  color: #58a6ff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s;
 }
 
 .sidebar a:hover {
-    color: #39ff14;
-    text-shadow: 0 0 5px #00f0ff;
+  color: #00FF00;
+  transform: translateX(5px);
 }
 
-.main-panel {
-    margin-left: 220px;
-    padding: 40px;
-    background-color: #121212;
-    min-height: 100vh;
+.sidebar .revoke {
+  background-color: #00FF00;
+  color: #0d1117;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sidebar .revoke:hover {
+  background-color: #ff5555;
+  color: #ffffff;
+}
+
+.content {
+  margin-left: 260px;
+  padding: 40px;
+}
+
+.flash-message {
+  background-color: #161b22;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #00FF00;
+  font-size: 16px;
+  color: #00FF00;
+  border-radius: 8px;
+}
+
+.flash-message.error {
+  border-left: 5px solid #ff5555;
+  color: #ff5555;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
+  background: #161b22;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00FF00;
 }
 
-label {
-    margin: 10px 0 5px;
-}
-
-input, button {
-    padding: 10px;
-    margin-bottom: 20px;
-    background: #1f1f1f;
-    color: #39ff14;
-    border: 1px solid #39ff14;
-    border-radius: 4px;
+input[type="text"], input[type="password"], input[type="email"], input[type="file"], textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  border-radius: 8px;
 }
 
 button {
-    background-color: #00f0ff;
-    color: #0d0d0d;
-    font-weight: bold;
-    cursor: pointer;
+  background-color: #00FF00;
+  color: #0d1117;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-    background-color: #39ff14;
-    color: black;
-}
-
-.result-box {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #1f1f1f;
-    border-left: 4px solid #00f0ff;
+  background-color: #58a6ff;
+  color: #ffffff;
 }
